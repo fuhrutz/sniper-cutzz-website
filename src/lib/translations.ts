@@ -29,7 +29,7 @@ export const translations = {
       skill_style: 'Style',
       skill_satisfaction: 'Satisfaction',
       lux_barbers: [
-        { name: 'Sniper', role: 'Master Barber & Founder', bio: '10+ years of precision craftsmanship.' },
+        { name: 'Sniper', role: 'Master Barber & Founder', bio: '4+ years of precision craftsmanship.' },
         { name: 'Luís', role: 'Senior Barber', bio: 'Specialist in skin fades and beard sculpting.' },
         { name: 'Tiago', role: 'Barber', bio: 'Expert in modern cuts and hair designs.' },
       ],
@@ -122,7 +122,7 @@ export const translations = {
       skill_style: 'Estilo',
       skill_satisfaction: 'Satisfação',
       lux_barbers: [
-        { name: 'Sniper', role: 'Barbeiro Mestre & Fundador', bio: '10+ anos de trabalho de precisão.' },
+        { name: 'Sniper', role: 'Barbeiro Mestre & Fundador', bio: '4+ anos de trabalho de precisão.' },
         { name: 'Luís', role: 'Barbeiro Sénior', bio: 'Especialista em fades e escultura de barba.' },
         { name: 'Tiago', role: 'Barbeiro', bio: 'Expert em cortes modernos e designs capilares.' },
       ],
@@ -215,7 +215,7 @@ export const translations = {
       skill_style: 'Style',
       skill_satisfaction: 'Satisfaction',
       lux_barbers: [
-        { name: 'Sniper', role: 'Maître Barbier & Fondateur', bio: '10+ ans de savoir-faire de précision.' },
+        { name: 'Sniper', role: 'Maître Barbier & Fondateur', bio: '4+ ans de savoir-faire de précision.' },
         { name: 'Luís', role: 'Barbier Senior', bio: 'Spécialiste des fades et de la barbe sculptée.' },
         { name: 'Tiago', role: 'Barbier', bio: 'Expert en coupes modernes et designs capillaires.' },
       ],
@@ -308,7 +308,7 @@ export const translations = {
       skill_style: 'Stil',
       skill_satisfaction: 'Zufriedenheit',
       lux_barbers: [
-        { name: 'Sniper', role: 'Meisterfriseur & Gründer', bio: '10+ Jahre Präzisionshandwerk.' },
+        { name: 'Sniper', role: 'Meisterfriseur & Gründer', bio: '4+ Jahre Präzisionshandwerk.' },
         { name: 'Luís', role: 'Senior-Friseur', bio: 'Spezialist für Skin-Fades und Bartformung.' },
         { name: 'Tiago', role: 'Friseur', bio: 'Experte für moderne Schnitte und Haardesigns.' },
       ],

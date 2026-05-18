@@ -46,7 +46,8 @@ export default function Hero3D({ onBookClick }: { onBookClick: () => void }) {
       ref={sectionRef}
       id="hero"
       style={{
-        minHeight: '100vh',
+        minHeight: 'calc(100vh + env(safe-area-inset-top))',
+        paddingTop: 'env(safe-area-inset-top)',
         position: 'relative',
         display: 'flex',
         flexDirection: 'column',

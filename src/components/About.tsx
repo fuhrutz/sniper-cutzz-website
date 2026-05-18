@@ -228,7 +228,7 @@ export default function About() {
             {/* Decorative stats */}
             <div className="mt-12 grid grid-cols-2 gap-4">
               {[
-                { n: '10+', label: 'Years Experience' },
+                { n: '4+', label: 'Years Experience' },
                 { n: '2', label: 'Locations' },
                 { n: '500+', label: 'Happy Clients' },
                 { n: '100%', label: 'Satisfaction' },
