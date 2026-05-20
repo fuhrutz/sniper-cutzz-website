@@ -1,20 +1,16 @@
 'use client';
 
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 
 export default function LogoPlane() {
   const meshRef = useRef<THREE.Mesh>(null!);
-  const texture = useTexture('/logo.png');
-
-  useEffect(() => {
-    if (texture) {
-      texture.colorSpace = THREE.SRGBColorSpace;
-      texture.needsUpdate = true;
-    }
-  }, [texture]);
+  const texture = useTexture('/logo.png', (tex) => {
+    tex.colorSpace = THREE.SRGBColorSpace;
+    tex.needsUpdate = true;
+  });
 
   useFrame(({ clock }) => {
     if (!meshRef.current) return;

@@ -42,6 +42,7 @@ export function LenisProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   return (
+    // eslint-disable-next-line react-hooks/refs
     <LenisContext.Provider value={lenisRef.current}>
       {children}
     </LenisContext.Provider>

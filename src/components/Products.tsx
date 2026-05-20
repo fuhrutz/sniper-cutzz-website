@@ -137,6 +137,7 @@ export default function Products() {
                 <motion.div
                   whileHover={{ scale: 1.15, rotate: [-3, 3, -3, 0] }}
                   transition={{ duration: 0.4 }}
+                  aria-hidden="true"
                   className="text-6xl select-none"
                   style={{ filter: 'drop-shadow(0 0 20px rgba(204,255,0,0.2))' }}
                 >
@@ -188,7 +189,8 @@ export default function Products() {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="px-5 py-2.5 font-semibold text-xs uppercase tracking-wider rounded-sm transition-all duration-200 flex items-center gap-2"
+                    aria-label={`${t.products.buy} ${product.name}`}
+                    className="px-5 py-2.5 font-semibold text-xs uppercase tracking-wider rounded-sm transition-all duration-200 flex items-center gap-2 focus-visible:outline-2 focus-visible:outline-[#CCFF00] focus-visible:outline-offset-2"
                     style={{
                       fontFamily: "'Outfit', sans-serif",
                       background: 'transparent',

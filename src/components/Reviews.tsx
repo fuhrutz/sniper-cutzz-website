@@ -54,7 +54,7 @@ const sampleReviews = [
 
 function Stars({ count }: { count: number }) {
   return (
-    <div className="flex gap-0.5">
+    <div className="flex gap-0.5" aria-label={`${count} out of 5 stars`} role="img">
       {[1, 2, 3, 4, 5].map((i) => (
         <svg
           key={i}
@@ -64,6 +64,7 @@ function Stars({ count }: { count: number }) {
           fill={i <= count ? '#CCFF00' : 'transparent'}
           stroke="#CCFF00"
           strokeWidth="2"
+          aria-hidden="true"
         >
           <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" />
         </svg>
@@ -97,6 +98,9 @@ function ReviewModal({ onClose }: { onClose: () => void }) {
       onClick={onClose}
     >
       <motion.div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="review-modal-title"
         initial={{ scale: 0.9, opacity: 0, y: 20 }}
         animate={{ scale: 1, opacity: 1, y: 0 }}
         exit={{ scale: 0.9, opacity: 0, y: 20 }}
@@ -108,10 +112,11 @@ function ReviewModal({ onClose }: { onClose: () => void }) {
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+          aria-label="Close review form"
+          className="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center transition-colors focus-visible:outline-2 focus-visible:outline-[#CCFF00] focus-visible:outline-offset-2"
           style={{ background: 'var(--border)', color: 'var(--muted)' }}
         >
-          ✕
+          <span aria-hidden="true">✕</span>
         </button>
 
         {submitted ? (
@@ -134,6 +139,7 @@ function ReviewModal({ onClose }: { onClose: () => void }) {
         ) : (
           <>
             <h3
+              id="review-modal-title"
               className="font-heading text-2xl mb-6"
               style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.06em', color: 'var(--fg)' }}
             >
@@ -141,16 +147,18 @@ function ReviewModal({ onClose }: { onClose: () => void }) {
             </h3>
 
             {/* Star selector */}
-            <div className="flex gap-2 mb-6">
+            <div className="flex gap-2 mb-6" role="group" aria-label="Star rating">
               {[1, 2, 3, 4, 5].map((i) => (
                 <button
                   key={i}
                   onClick={() => setStars(i)}
-                  className="transition-transform hover:scale-110"
+                  aria-label={`Rate ${i} star${i > 1 ? 's' : ''}`}
+                  aria-pressed={i <= stars}
+                  className="transition-transform hover:scale-110 focus-visible:outline-2 focus-visible:outline-[#CCFF00] focus-visible:outline-offset-2 rounded"
                 >
                   <svg width="28" height="28" viewBox="0 0 24 24"
                     fill={i <= stars ? '#CCFF00' : 'transparent'}
-                    stroke="#CCFF00" strokeWidth="2">
+                    stroke="#CCFF00" strokeWidth="2" aria-hidden="true">
                     <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" />
                   </svg>
                 </button>
@@ -191,7 +199,8 @@ function ReviewModal({ onClose }: { onClose: () => void }) {
               <button
                 type="button"
                 onClick={() => fileRef.current?.click()}
-                className="px-4 py-3 rounded-lg text-sm text-left transition-colors flex items-center gap-3"
+                aria-label={fileName ? `Selected file: ${fileName}. Click to change` : 'Upload a photo or video of your haircut'}
+                className="px-4 py-3 rounded-lg text-sm text-left transition-colors flex items-center gap-3 focus-visible:outline-2 focus-visible:outline-[#CCFF00] focus-visible:outline-offset-2"
                 style={{
                   background: 'var(--bg)',
                   border: '1px dashed var(--border)',

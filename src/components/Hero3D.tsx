@@ -79,6 +79,7 @@ export default function Hero3D({ onBookClick }: { onBookClick: () => void }) {
       {/* ── 3D Logo Canvas (60vh) ── */}
       <div
         ref={canvasRef}
+        aria-hidden="true"
         style={{
           width: '100%',
           height: '60vh',
@@ -117,6 +118,7 @@ export default function Hero3D({ onBookClick }: { onBookClick: () => void }) {
         >
           <button
             onClick={onBookClick}
+            className="focus-visible:outline-2 focus-visible:outline-[#CCFF00] focus-visible:outline-offset-2"
             style={{
               padding: '1rem 2rem',
               fontFamily: "'Outfit', sans-serif",
@@ -213,6 +215,7 @@ export default function Hero3D({ onBookClick }: { onBookClick: () => void }) {
 
       {/* Scroll indicator */}
       <div
+        aria-hidden="true"
         style={{
           position: 'absolute',
           bottom: '1.5rem',

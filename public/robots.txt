@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /privacy-policy
+Disallow: /legal-notice
+
+Sitemap: https://sniper-cutzz.com/sitemap.xml

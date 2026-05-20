@@ -121,7 +121,8 @@ export default function Portfolio() {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   onClick={() => setPlaying(playing === video.id ? null : video.id)}
-                  className="w-16 h-16 rounded-full flex items-center justify-center transition-all duration-300"
+                  aria-label={playing === video.id ? `Pause ${video.title}` : `Play ${video.title}`}
+                  className="w-16 h-16 rounded-full flex items-center justify-center transition-all duration-300 focus-visible:outline-2 focus-visible:outline-[#CCFF00] focus-visible:outline-offset-2"
                   style={{
                     background: playing === video.id ? '#CCFF00' : 'rgba(204,255,0,0.15)',
                     border: '2px solid rgba(204,255,0,0.6)',
@@ -200,9 +201,10 @@ export default function Portfolio() {
             href="https://instagram.com/sniper_cutzz"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Follow Sniper Cutzz on Instagram (opens in new tab)"
             whileHover={{ scale: 1.05, boxShadow: '0 0 40px rgba(204,255,0,0.25)' }}
             whileTap={{ scale: 0.97 }}
-            className="flex items-center gap-3 px-8 py-4 rounded-xl font-semibold uppercase tracking-wider text-sm transition-all duration-300"
+            className="flex items-center gap-3 px-8 py-4 rounded-xl font-semibold uppercase tracking-wider text-sm transition-all duration-300 focus-visible:outline-2 focus-visible:outline-[#CCFF00] focus-visible:outline-offset-2"
             style={{
               fontFamily: "'Outfit', sans-serif",
               background: 'var(--card)',

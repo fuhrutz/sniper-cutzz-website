@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Manual snapshot backups — not production code
+    "src-backup-v1/**",
+    "src-backup-20260424/**",
   ]),
 ]);
 

@@ -13,6 +13,7 @@ import Reviews from '@/components/Reviews';
 import Footer from '@/components/Footer';
 import FAB from '@/components/FAB';
 import BookingModal from '@/components/Booking';
+import CookieBanner from '@/components/CookieBanner';
 
 export default function Home() {
   const { bookingOpen, setBookingOpen } = useApp();
@@ -39,6 +40,8 @@ export default function Home() {
           <BookingModal onClose={() => setBookingOpen(false)} />
         )}
       </AnimatePresence>
+
+      <CookieBanner />
     </>
   );
 }
